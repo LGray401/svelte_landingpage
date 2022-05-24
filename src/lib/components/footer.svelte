@@ -1,8 +1,10 @@
 <script>
-  import IntersectionObserver from "./IntersectionObserver.svelte";
+  import ExampleMarkdown from "./exampleMarkdown.svelte";
+import IntersectionObserver from "./IntersectionObserver.svelte";
 
 </script>
 
+<ExampleMarkdown markdown="# Hello from MAreatgh" />
 
 <IntersectionObserver let:intersecting={intersecting} top={10} once={true}>
   {#if intersecting}
