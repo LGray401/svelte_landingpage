@@ -19,7 +19,7 @@
     <img class="block-symbol" src={blockSymbol} alt="images\loupe.png">
     <div class="block-text">
     <h1 class="block-heading">{blockHeading}</h1>
-   <h1 class="block-paragraph">{@html pageContent}</h1> 
+   <h1 class="block-paragraph">{blockParagraph}</h1> 
     </div>
     
   </div>

@@ -45,7 +45,7 @@
 
         <BigTextBlocks
         blockHeading={textblock.fields.titleTextbBlock}
-        blockParagraph={textblock.fields.description}
+        blockParagraph={textblock.fields.descrip}
         blockSymbol={textblock.fields.symbolBlock}
         />
 
