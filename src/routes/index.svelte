@@ -3,10 +3,7 @@
     import BigTextBlocks from "../lib/components/bigTextBlocks.svelte";
     import MetricsBox from "../lib/components/metricsBox.svelte";
     import ContactForm from "../lib/components/contactForm.svelte";
-import { onMount } from "svelte";
-
-    
-    
+    import { onMount } from "svelte";
 
 </script>
 

@@ -4,8 +4,18 @@
     export let blockSymbol;
 	
     import { fly } from 'svelte/transition';
-	//import ExampleMarkdown from './exampleMarkdown.svelte';
     import IntersectionObserver from "./IntersectionObserver.svelte";
+</script>
+
+<script context="module">
+    export async function load({ fetch }) {
+        const [{ textBlocks }] = await Promise.all([fetch('/data.json').then((r) => r.json())]);
+        return {
+            props: {
+                textBlocks
+            }
+        };
+    }
 </script>
 
 <IntersectionObserver let:intersecting={intersecting} top={-200} once={true}>
@@ -13,7 +23,6 @@
 <div  class="block" transition:fly="{{ x: 300, duration: 2000 }}">
     <img class="block-symbol" src={blockSymbol} alt="images\loupe.png">
     <div class="block-text">
-<!--	<ExampleMarkdown markdown={blockTextMD} /> -->
     <h1 class="block-heading">{blockHeading}</h1>
    <h1 class="block-paragraph">{blockParagraph}</h1> 
     </div>

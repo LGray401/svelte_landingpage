@@ -27,6 +27,8 @@
   },
   "type": "module",
   "dependencies": {
-    "@sveltejs/adapter-static": "^1.0.0-next.32"
+    "@sveltejs/adapter-static": "^1.0.0-next.32",
+    "contentful": "^9.1.29",
+    "marked": "^4.0.16"
   }
 }
