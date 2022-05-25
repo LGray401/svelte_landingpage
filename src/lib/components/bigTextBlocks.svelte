@@ -5,18 +5,13 @@
 	
     import { fly } from 'svelte/transition';
     import IntersectionObserver from "./IntersectionObserver.svelte";
+	import { marked } from 'marked';
+    export let richContent = blockParagraph;
+    const renderer = new marked.Renderer();
+    $: pageContent = marked(richContent, { renderer });
 </script>
 
-<script context="module">
-    export async function load({ fetch }) {
-        const [{ textBlocks }] = await Promise.all([fetch('/data.json').then((r) => r.json())]);
-        return {
-            props: {
-                textBlocks
-            }
-        };
-    }
-</script>
+
 
 <IntersectionObserver let:intersecting={intersecting} top={-200} once={true}>
   {#if intersecting}
@@ -24,7 +19,7 @@
     <img class="block-symbol" src={blockSymbol} alt="images\loupe.png">
     <div class="block-text">
     <h1 class="block-heading">{blockHeading}</h1>
-   <h1 class="block-paragraph">{blockParagraph}</h1> 
+   <h1 class="block-paragraph">{@html pageContent}</h1> 
     </div>
     
   </div>

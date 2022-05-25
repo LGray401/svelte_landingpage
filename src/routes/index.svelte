@@ -5,14 +5,7 @@
     import ContactForm from "../lib/components/contactForm.svelte";
     import { onMount } from "svelte";
 
-</script>
-
-
-
-<Headerblock/>
-<main>
-    <div class="overview">
-        <BigTextBlocks 
+    /*<BigTextBlocks 
         blockHeading="Standortbestimmung"
         blockParagraph="Effiziente Informationssammlung und detaillierte Ursachenanalysen zur Bestimmung des Status-Quo Ihrer SQL Server-Umgebung."
         blockSymbol="\images\loupe.png"
@@ -27,7 +20,38 @@
         blockHeading="Optimale Performance"
         blockParagraph="Garantierte Performance-Optimierung von mindestens 30% nach Umsetzung des Handlungskonzepts mit dem sqlXpert Team."
         blockSymbol="\images\magic-wand.png"
+        />*/
+</script>
+
+<script context="module">
+    export async function load({ fetch }) {
+        const [{ textBlocks }] = await Promise.all([fetch('/data.json').then((r) => r.json())]);
+        return {
+            props: {
+                textBlocks
+            }
+        };
+    }
+    export let textBlocks;
+    
+</script>
+
+
+
+<Headerblock/>
+<main>
+    <div class="overview">
+        {#each textBlocks.items as textblock}
+
+        <BigTextBlocks
+        blockHeading={textblock.fields.titleTextbBlock}
+        blockParagraph={textblock.fields.description}
+        blockSymbol={textblock.fields.symbolBlock}
         />
+
+        {/each}
+
+        
     </div>
     <div class="flex">
         <MetricsBox
