@@ -19,8 +19,7 @@ import { onMount } from "svelte";
         blockHeading="Standortbestimmung"
         blockParagraph="Effiziente Informationssammlung und detaillierte Ursachenanalysen zur Bestimmung des Status-Quo Ihrer SQL Server-Umgebung."
         blockSymbol="\images\loupe.png"
-        blockTextMD={StandortbestimmungMD}
-
+        
         />
         <BigTextBlocks 
         blockHeading="Optimierungskonzept"

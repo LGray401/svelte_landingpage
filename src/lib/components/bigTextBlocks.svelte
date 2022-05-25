@@ -2,7 +2,7 @@
     export let blockHeading;
     export let blockParagraph;
     export let blockSymbol;
-	export let blockTextMD;
+	
     import { fly } from 'svelte/transition';
 	//import ExampleMarkdown from './exampleMarkdown.svelte';
     import IntersectionObserver from "./IntersectionObserver.svelte";
